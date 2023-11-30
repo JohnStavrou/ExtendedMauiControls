@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:local="clr-namespace:ExtendedMauiControls.Controls"
+             x:Class="ExtendedMauiControls.Controls.ExtendedEntry"
+             x:DataType="local:ExtendedEntry"
+             x:Name="Self"
+             PrimaryColor="{StaticResource Primary}"
+             SecondaryColor="{StaticResource Gray500}">
+
+    <ContentView.Resources>
+        <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+    </ContentView.Resources>
+    
+    <Grid HeightRequest="50" >
+        <Border StrokeThickness="2" Stroke="{Binding Source={x:Reference Self}, Path=BorderColor}">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="8"/>
+            </Border.StrokeShape>
+
+            <Grid ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="2" Padding="10,0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference Self}, Path=InsetTappedCommand}"/>
+                </Grid.GestureRecognizers>
+
+                <mi:MauiIcon Grid.Column="0" IconSize="24" VerticalOptions="Center" Margin="0,4,0,0"
+                             Icon="{Binding Source={x:Reference Self}, Path=PrefixIcon}"
+                             IconColor="{Binding Source={x:Reference Self}, Path=BorderColor}"/>
+
+               <Entry Grid.Column="1" x:Name="entry" Margin="0,2,0,0"
+                      Placeholder="{Binding Source={x:Reference Self}, Path=Placeholder}"
+                      PlaceholderColor="{StaticResource Gray500}"
+                      TextChanged="Entry_TextChanged"
+                      Focused="Entry_Focused"
+                      Unfocused="Entry_Unfocused"/>
+                
+                <mi:MauiIcon Grid.Column="2" IconSize="24" VerticalOptions="Center" Margin="0,4,0,0"
+                             IsVisible="{Binding Source={x:Reference Self}, Path=HasClearButton}"
+                             Icon="{mi:Material Close}"
+                             IconColor="{Binding Source={x:Reference Self}, Path=BorderColor}">
+                    <mi:MauiIcon.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={x:Reference Self}, Path=ClearTappedCommand}"/>
+                    </mi:MauiIcon.GestureRecognizers>
+                </mi:MauiIcon>
+
+                <mi:MauiIcon Grid.Column="3" IconSize="24" VerticalOptions="Center" Margin="0,4,0,0"
+                             IsVisible="{Binding Source={x:Reference Self}, Path=IsPassword}"
+                             Icon="{Binding Source={x:Reference Self}, Path=PasswordIcon}"
+                             IconColor="{Binding Source={x:Reference Self}, Path=BorderColor}">
+                    <mi:MauiIcon.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={x:Reference Self}, Path=PasswordVisibilityTappedCommand}"/>
+                    </mi:MauiIcon.GestureRecognizers>
+                </mi:MauiIcon>
+
+                <mi:MauiIcon Grid.Column="4" IconSize="24" VerticalOptions="Center" Margin="0,4,0,0"
+                             Icon="{Binding Source={x:Reference Self}, Path=SuffixIcon}"
+                             IconColor="{Binding Source={x:Reference Self}, Path=BorderColor}"/>
+            </Grid>
+        </Border>
+
+        <Label BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" Margin="10,-10,0,0" Padding="5,0"
+               IsVisible="{Binding Source={x:Reference Self}, Path=Placeholder, Converter={toolkit:IsStringNotNullOrEmptyConverter}}"
+               Text="{Binding Source={x:Reference Self}, Path=Placeholder}"
+               TextColor="{Binding Source={x:Reference Self}, Path=BorderColor}"/>
+    </Grid>
+</ContentView>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedMauiControls", "ExtendedMauiControls.csproj", "{6E661DA8-B7C2-4706-AC3C-E10941CF47E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E661DA8-B7C2-4706-AC3C-E10941CF47E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E661DA8-B7C2-4706-AC3C-E10941CF47E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E661DA8-B7C2-4706-AC3C-E10941CF47E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E661DA8-B7C2-4706-AC3C-E10941CF47E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDA0FC6A-C9D8-4F84-8F81-FF726BD9BEBB}
+	EndGlobalSection
+EndGlobal
