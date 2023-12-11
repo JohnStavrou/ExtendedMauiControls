@@ -21,9 +21,13 @@
 		<Authors>JohnStavrou</Authors>
 		<Company></Company>
 		<PackageOutputPath>C:\Users\iss\Documents\nupkg</PackageOutputPath>
-		<PackageId>ExtendedMauiControls</PackageId>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageIcon>emc_logo.png</PackageIcon>
+		<Description>A powerful toolkit designed to extend simple controls and effortlessly create sophisticated, custom UI elements.</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageId>ExtendedMauiControls</PackageId>
+		<RepositoryUrl>https://github.com/JohnStavrou/ExtendedMauiControls</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -47,6 +51,17 @@
 	  <MauiXaml Update="Controls\ExtendedEntry.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\..\Downloads\emc_logo.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\..\..\Downloads\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>
