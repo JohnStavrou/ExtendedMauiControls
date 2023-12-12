@@ -17,17 +17,22 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<PackAsTool>False</PackAsTool>
-		<Title>ExtendedMauiControls</Title>
-		<Authors>JohnStavrou</Authors>
 		<Company></Company>
 		<PackageOutputPath>C:\Users\iss\Documents\nupkg</PackageOutputPath>
-		<Version>1.0.2</Version>
+		<Version>1.0.4</Version>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<PackageIcon>emc_logo.png</PackageIcon>
 		<Description>A powerful toolkit designed to extend simple controls and effortlessly create sophisticated, custom UI elements.</Description>
+		<PackageIcon>emc_logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageId>ExtendedMauiControls</PackageId>
-		<RepositoryUrl>https://github.com/JohnStavrou/ExtendedMauiControls</RepositoryUrl>
+		<RepositoryUrl></RepositoryUrl>
+		<PackageTags>maui,extended,controls,custom,dotnet,</PackageTags>
+		<PackageProjectUrl>https://github.com/JohnStavrou/ExtendedMauiControls</PackageProjectUrl>
+		<Authors>JohnStavrou</Authors>
+		<PackageId></PackageId>
+		<Title></Title>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<Copyright>(c) 2023 JohnStavrou</Copyright>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -54,14 +59,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="..\..\..\Downloads\emc_logo.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	  <None Include="..\..\..\Downloads\README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
+	  <None Include="Resources\Images\emc_logo.png" PackagePath="\" Pack="true" />
+   	  <None Include="README.md" PackagePath="\" Pack="true" />
+	  <None Include="LICENSE" PackagePath="\" Pack="true" />
 	</ItemGroup>
-
 </Project>
