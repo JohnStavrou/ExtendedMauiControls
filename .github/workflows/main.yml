@@ -1,0 +1,23 @@
+name: Sync with Azure DevOps
+
+on:
+  push:
+    branches:
+      - pipeline_test
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Sync with Azure DevOps
+        env:
+          AZURE_DEVOPS_REPO_URL: ${{ https://johnstavrou.visualstudio.com/ExtendedMauiControls }}
+          AZURE_DEVOPS_TOKEN: ${{ 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 }}
+        run: |
+          git remote add azure $AZURE_DEVOPS_REPO_URL
+          git fetch azure
+          git push azure HEAD:refs/heads/pipeline_test --force
