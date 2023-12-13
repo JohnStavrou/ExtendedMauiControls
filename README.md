@@ -11,7 +11,7 @@ Right now, the toolkit is quite new and not tested in Windows devices, so some c
 
 First, in order to use ExtendedMauiControls you need to call in yout project's MauiProgram.cs the extension method of the dependent package CommunityToolkit.Maui and then call the extension method that initializes our toolkit.
 
-```c#
+```csharp
 public static MauiApp CreateMauiApp()
 {
     var builder = MauiApp.CreateBuilder();
@@ -29,7 +29,6 @@ public static MauiApp CreateMauiApp()
 
 #### Bindable Properties:
    - Text
-
 #### Properties:
    - Placeholder
    - IsPassword
@@ -40,8 +39,9 @@ public static MauiApp CreateMauiApp()
    - SecondaryColor
 
 #### Important Notes
- PrimaryColor and SecondaryColor are binded your project's Colors.xaml, so if they are missing you need to add them in your file as shown below:
-```
+ PrimaryColor and SecondaryColor are binded to the Primary and Secondary values respectively in your project's Colors.xaml, so if they are missing you need to add them as shown below:
+
+```xml
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -50,25 +50,23 @@ public static MauiApp CreateMauiApp()
     <Color x:Key="Secondary">#DFD8F7</Color>
 </ResourceDictionary>
 ```
-If you are not using the Colors.xaml file you have to use the PrimaryColor and SecondaryColor
 
-If those values are missing, you need to set the control's PrimaryColor and SecondaryColor, otherwise the control will not render.
-   
+If you wish to use different colors, you can simply override those values by using the PrimaryColor and SecondaryColor properties.
 
 # Usage
 
 You can use the namespace below to use the tookit in xaml or C#
 
-xaml
+XAML
+
 ```xml
 xmlns:emc="clr-namespace:ExtendedMauiControls.Controls;assembly=ExtendedMauiControls"
 ```
 
 C#
-```c#
+```csharp
 using MauiExtendedControls.Controls;
 ```
-
 
 # Example
 
@@ -83,7 +81,18 @@ Below you can see a simple usage example on a sign-in view
                    Placeholder="Password"
                    PrefixIcon="Lock"/>
 ```
-# License
+
+#### Notes
+ If you find the entry border in windows to be annoying, like I do, you can simply add the following code in your App.xaml file in your project's Platforms/Windows.
+
+```xml
+<maui:MauiWinUIApplication.Resources>
+    <Thickness x:Key="TextControlBorderThemeThicknessFocused">0</Thickness>
+</maui:MauiWinUIApplication.Resources>
+```
+This is a temporary solution until I find a nicer way to fix it for everyone!
+
+# Credits
 
 Huge thanks to
 [AathifMahir](https://github.com/AathifMahir) for his incredible work on creating MAUI Icons and making it easier to use Material Icons and many more in .NET MAUI.

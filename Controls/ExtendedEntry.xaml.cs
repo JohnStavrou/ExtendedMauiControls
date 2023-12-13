@@ -1,7 +1,5 @@
 #if ANDROID
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
-#elif WINDOWS
-
 #endif
 
 namespace ExtendedMauiControls.Controls;
@@ -37,9 +35,12 @@ public partial class ExtendedEntry : ContentView
     {
         Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
         {
-            #if ANDROID
+#if ANDROID
             handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());
-            #endif
+#elif WINDOWS
+            handler.PlatformView.BorderThickness = new Microsoft.UI.Xaml.Thickness(0);
+            // Do something here to remove the windows border when focused!!!
+#endif
         });
     }
     #endregion
