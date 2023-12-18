@@ -14,7 +14,7 @@
         <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
     </ContentView.Resources>
     
-    <Grid HeightRequest="50" >
+    <Grid HeightRequest="50">
         <Border StrokeThickness="2" Stroke="{Binding Source={x:Reference Self}, Path=BorderColor}">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="8"/>

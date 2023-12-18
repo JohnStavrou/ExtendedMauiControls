@@ -25,9 +25,6 @@ public partial class ExtendedEntry : ContentView
     #region Handlers
     private void InitializeHandlers()
     {
-        // Official temporary workaround for url styled namespace in xaml
-        _ = new MauiIcon();
-
         RemoveEntryUnderline();
     }
 

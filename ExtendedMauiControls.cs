@@ -11,5 +11,8 @@ public static class ExtendedMauiControls
     {
         builder.UseMauiCommunityToolkit();
         builder.UseMaterialMauiIcons();
+
+        // Official temporary workaround for url styled namespace in xaml
+        _ = new MauiIcon();
     }
 }
