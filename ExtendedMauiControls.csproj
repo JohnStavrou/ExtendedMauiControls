@@ -47,12 +47,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Controls\BaseControl.xaml.cs">
+	    <DependentUpon>BaseControl.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Controls\ExtendedButton.xaml.cs">
+	    <DependentUpon>ExtendedButton.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Controls\ExtendedEntry.xaml.cs">
 	    <DependentUpon>ExtendedEntry.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\BaseControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\ExtendedButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Controls\ExtendedEntry.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

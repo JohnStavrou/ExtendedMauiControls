@@ -4,9 +4,7 @@ Unlock the true potential of .NET MAUI development with ExtendedMauiControls, a 
 
 Built exclusively for .NET MAUI, our library seamlessly integrates with the cross-platform framework, enabling you to enhance your app's UI on iOS, Android, and Windows with a unified codebase.
 
-Right now, the toolkit is quite new and not tested in Windows devices, so some controls or properties may be unusable for the time being.
-
-
+<br>
 
 # Available Extented Controls
 ## ExtendedEntry
@@ -15,30 +13,17 @@ Right now, the toolkit is quite new and not tested in Windows devices, so some c
 
 #### Bindable Properties:
    - Text
-   - 
 #### Properties:
    - Placeholder
    - IsPassword
-   - HasClearButton
+   - HasClearButton (default: True)
    - PrefixIcon
    - SuffixIcon
    - PrimaryColor
-   - SecondaryColor
+   - UnfocusedColor (default: Gray)
+   - TextColor (default: Black)
 
-#### Important Notes
-PrimaryColor and SecondaryColor are binded to the Primary and Secondary values respectively in your project's Colors.xaml, so if they are missing you need to add them as shown below:
-
-```xml
-<ResourceDictionary 
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-
-    <Color x:Key="Primary">#512BD4</Color>
-    <Color x:Key="Secondary">#DFD8F7</Color>
-</ResourceDictionary>
-```
-
-In order to use different colors, you can simply override those values by using the PrimaryColor and SecondaryColor properties.
+<br>
 
 If you find the entry border in windows to be annoying, like I do, you can simply add the following code in your App.xaml file in your project's Platforms/Windows.
 
@@ -51,6 +36,25 @@ If you find the entry border in windows to be annoying, like I do, you can simpl
 This is a temporary solution until I find a nicer way to fix it for everyone!
 
 
+## ExtendedButton
+
+![Alt text](Resources/Images/button.png)
+
+#### Event Handlers:
+   - Tapped
+#### Bindable Properties:
+   - TappedCommand
+#### Properties:
+   - Text
+   - HorizontalTextAlignment (default: Center)
+   - VerticalTextAlignment (default: Center)
+   - PrefixIcon
+   - SuffixIcon
+   - PrimaryColor
+   - TextColor (default: White)
+   - IconColor (default: White)
+
+<br>
 
 # Getting Started
 
@@ -69,7 +73,7 @@ public static MauiApp CreateMauiApp()
 }
 ```
 
-
+<br>
 
 # Usage
 
@@ -86,7 +90,24 @@ C#
 using MauiExtendedControls.Controls;
 ```
 
+<br>
 
+### Improtant Notes
+
+PrimaryColor is binded to the Primary value in your project's Colors.xaml, so if it is missing you need to add it as shown below:
+
+```xml
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="Primary">#512BD4</Color>
+</ResourceDictionary>
+```
+
+In order to use different colors, you can simply override this value by using the PrimaryColor property.
+
+<br>
 
 # Examples
 
@@ -100,9 +121,16 @@ Below you can see a simple usage example on a sign-in view
 <emc:ExtendedEntry Text="{Binding Password}" IsPassword="True"
                    Placeholder="Password"
                    PrefixIcon="Lock"/>
+
+<emc:ExtendedButton Text="Sign In"
+                    SuffixIcon="ArrowForward"
+                    TappedCommand="{Binding TappedCommand}"/>
 ```
 
+![Alt text](Resources/Images/signin.png)
 
+
+<br>
 
 # Credits
 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseControl xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+                   xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+                   xmlns:local="clr-namespace:ExtendedMauiControls.Controls"
+                   x:Class="ExtendedMauiControls.Controls.ExtendedButton"
+                   x:DataType="local:ExtendedButton"
+                   x:Name="Self">
+
+    <ContentView.Resources>
+        <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+    </ContentView.Resources>
+    
+    <Grid HeightRequest="50">
+        <Border StrokeThickness="0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="8"/>
+            </Border.StrokeShape>
+
+            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="2" Padding="10,0"
+                  BackgroundColor="{Binding Source={x:Reference Self}, Path=PrimaryColor}">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference Self}, Path=TappedCommand}"/>
+                </Grid.GestureRecognizers>
+
+                <mi:MauiIcon Grid.Column="0" IconSize="24" VerticalOptions="Center" Margin="0,4,0,0"
+                             Icon="{Binding Source={x:Reference Self}, Path=PrefixIcon}"
+                             IconColor="{Binding Source={x:Reference Self}, Path=IconColor}"/>
+
+                <Label Grid.Column="1" Margin="0,2,0,0"
+                       Text="{Binding Source={x:Reference Self}, Path=Text}"
+                       TextColor="{Binding Source={x:Reference Self}, Path=TextColor}"
+                       HorizontalTextAlignment="{Binding Source={x:Reference Self}, Path=HorizontalTextAlignment}"
+                       VerticalTextAlignment="{Binding Source={x:Reference Self}, Path=VerticalTextAlignment}"/>
+
+                <mi:MauiIcon Grid.Column="2" IconSize="24" VerticalOptions="Center" Margin="0,4,0,0"
+                             Icon="{Binding Source={x:Reference Self}, Path=SuffixIcon}"
+                             IconColor="{Binding Source={x:Reference Self}, Path=IconColor}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</local:BaseControl>
