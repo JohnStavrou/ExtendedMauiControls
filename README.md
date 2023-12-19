@@ -4,7 +4,7 @@ Unlock the true potential of .NET MAUI development with ExtendedMauiControls, a 
 
 Built exclusively for .NET MAUI, our library seamlessly integrates with the cross-platform framework, enabling you to enhance your app's UI on iOS, Android, and Windows with a unified codebase.
 
-<br>
+
 
 # Available Extented Controls
 ## ExtendedEntry
@@ -23,7 +23,7 @@ Built exclusively for .NET MAUI, our library seamlessly integrates with the cros
    - UnfocusedColor (default: Gray)
    - TextColor (default: Black)
 
-<br>
+
 
 If you find the entry border in windows to be annoying, like I do, you can simply add the following code in your App.xaml file in your project's Platforms/Windows.
 
@@ -54,7 +54,7 @@ This is a temporary solution until I find a nicer way to fix it for everyone!
    - TextColor (default: White)
    - IconColor (default: White)
 
-<br>
+
 
 # Getting Started
 
@@ -73,7 +73,7 @@ public static MauiApp CreateMauiApp()
 }
 ```
 
-<br>
+
 
 # Usage
 
@@ -90,7 +90,7 @@ C#
 using MauiExtendedControls.Controls;
 ```
 
-<br>
+
 
 ### Improtant Notes
 
@@ -107,7 +107,7 @@ PrimaryColor is binded to the Primary value in your project's Colors.xaml, so if
 
 In order to use different colors, you can simply override this value by using the PrimaryColor property.
 
-<br>
+
 
 # Examples
 
@@ -130,7 +130,7 @@ Below you can see a simple usage example on a sign-in view
 ![Alt text](Resources/Images/signin.png)
 
 
-<br>
+
 
 # Credits
 
