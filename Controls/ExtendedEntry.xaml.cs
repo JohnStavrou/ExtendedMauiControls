@@ -2,19 +2,19 @@
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 #endif
 
+using Microsoft.Maui.Graphics.Text;
+
 namespace ExtendedMauiControls.Controls;
 
-public partial class ExtendedEntry : ContentView
+public partial class ExtendedEntry : BaseControl
 {
     public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(ExtendedEntry), "");
     
     private string placeholder;
     private bool isPassword;
     private bool hasClearButton = true;
-    private MaterialIcons? prefixIcon;
-    private MaterialIcons? suffixIcon;
-    private Color primaryColor;
-    private Color secondaryColor;
+    private Color textColor = Colors.Black;
+    private Color unfocusedColor = Colors.Gray;
 
     public ExtendedEntry()
     {
@@ -85,40 +85,28 @@ public partial class ExtendedEntry : ContentView
         }
     }
 
-    public MaterialIcons? PrefixIcon
+    public Color TextColor
     {
-        get => prefixIcon;
+        get => textColor;
         set
         {
-            prefixIcon = value;
+            textColor = value;
             OnPropertyChanged();
         }
     }
 
-    public MaterialIcons? SuffixIcon
+    public Color UnfocusedColor
     {
-        get => suffixIcon;
+        get => unfocusedColor;
         set
         {
-            suffixIcon = value;
+            unfocusedColor = value;
             OnPropertyChanged();
         }
-    }
-
-    public Color PrimaryColor
-    {
-        get => primaryColor;
-        set => primaryColor = value;
-    }
-
-    public Color SecondaryColor
-    {
-        get => secondaryColor;
-        set => secondaryColor = value;
     }
     #endregion
 
-    public Color BorderColor => IsFocused ? PrimaryColor : SecondaryColor;
+    public Color BorderColor => IsFocused ? PrimaryColor : UnfocusedColor;
 
     public MaterialIcons PasswordIcon => IsPasswordVisible ? MaterialIcons.Visibility : MaterialIcons.VisibilityOff;
 

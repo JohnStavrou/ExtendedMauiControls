@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:local="clr-namespace:ExtendedMauiControls.Controls"
-             x:Class="ExtendedMauiControls.Controls.ExtendedEntry"
-             x:DataType="local:ExtendedEntry"
-             x:Name="Self"
-             PrimaryColor="{StaticResource Primary}"
-             SecondaryColor="{StaticResource Gray500}">
+<local:BaseControl xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+                   xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+                   xmlns:local="clr-namespace:ExtendedMauiControls.Controls"
+                   x:Class="ExtendedMauiControls.Controls.ExtendedEntry"
+                   x:DataType="local:ExtendedEntry"
+                   x:Name="Self">
 
     <ContentView.Resources>
         <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
@@ -20,7 +18,8 @@
                 <RoundRectangle CornerRadius="8"/>
             </Border.StrokeShape>
 
-            <Grid ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="2" Padding="10,0">
+            <Grid ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="2" Padding="10,0"
+                  BackgroundColor="{Binding Source={x:Reference Self}, Path=BackgroundColor}">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding Source={x:Reference Self}, Path=InsetTappedCommand}"/>
                 </Grid.GestureRecognizers>
@@ -30,8 +29,9 @@
                              IconColor="{Binding Source={x:Reference Self}, Path=BorderColor}"/>
 
                <Entry Grid.Column="1" x:Name="entry" Margin="0,2,0,0"
+                      TextColor="{Binding Source={x:Reference Self}, Path=TextColor}"
                       Placeholder="{Binding Source={x:Reference Self}, Path=Placeholder}"
-                      PlaceholderColor="{StaticResource Gray500}"
+                      PlaceholderColor="{Binding Source={x:Reference Self}, Path=UnfocusedColor}"
                       TextChanged="Entry_TextChanged"
                       Focused="Entry_Focused"
                       Unfocused="Entry_Unfocused"/>
@@ -65,4 +65,4 @@
                Text="{Binding Source={x:Reference Self}, Path=Placeholder}"
                TextColor="{Binding Source={x:Reference Self}, Path=BorderColor}"/>
     </Grid>
-</ContentView>
+</local:BaseControl>
