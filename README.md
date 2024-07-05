@@ -4,7 +4,7 @@ Unlock the true potential of .NET MAUI development with ExtendedMauiControls, a 
 
 Built exclusively for .NET MAUI, our library seamlessly integrates with the cross-platform framework, enabling you to enhance your app's UI on iOS, Android, and Windows with a unified codebase.
 
-
+Μετά απο λαϊκή απαίτηση, αφαιρέθηκε το Placeholder text από το ExtendedEntry Control. Τι α κανς...
 
 # Available Extented Controls
 ## ExtendedEntry

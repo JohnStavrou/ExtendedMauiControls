@@ -2,8 +2,6 @@
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 #endif
 
-using Microsoft.Maui.Graphics.Text;
-
 namespace ExtendedMauiControls.Controls;
 
 public partial class ExtendedEntry : BaseControl

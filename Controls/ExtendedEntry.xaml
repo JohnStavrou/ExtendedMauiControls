@@ -30,11 +30,13 @@
 
                <Entry Grid.Column="1" x:Name="entry" Margin="0,2,0,0"
                       TextColor="{Binding Source={x:Reference Self}, Path=TextColor}"
-                      Placeholder="{Binding Source={x:Reference Self}, Path=Placeholder}"
+                      
                       PlaceholderColor="{Binding Source={x:Reference Self}, Path=UnfocusedColor}"
                       TextChanged="Entry_TextChanged"
                       Focused="Entry_Focused"
                       Unfocused="Entry_Unfocused"/>
+                
+                <!--Placeholder="{Binding Source={x:Reference Self}, Path=Placeholder}"-->
                 
                 <mi:MauiIcon Grid.Column="2" IconSize="24" VerticalOptions="Center" Margin="0,4,0,0"
                              IsVisible="{Binding Source={x:Reference Self}, Path=HasClearButton}"
