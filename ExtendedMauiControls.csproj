@@ -19,7 +19,7 @@
 		<PackAsTool>False</PackAsTool>
 		<Company></Company>
 		<PackageOutputPath>C:\Users\iss\Documents\nupkg</PackageOutputPath>
-		<Version>1.0.5</Version>
+		<Version>1.0.6</Version>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Description>A powerful toolkit designed to extend simple controls and effortlessly create sophisticated, custom UI elements.</Description>
 		<PackageIcon>emc_logo.png</PackageIcon>
